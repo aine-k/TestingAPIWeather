@@ -6,8 +6,10 @@ async function getWeather() {
       throw new Error(`Response status: ${response.status}`);
     }
 
-    const result = await response.json();
+    const result = await response.text();
     console.log(result);
+    content = document.getElementById("weather")
+    content.innerText = result;
   } catch (error) {
     console.error(error.message);
   }
