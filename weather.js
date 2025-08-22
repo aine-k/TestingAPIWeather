@@ -1,5 +1,5 @@
 async function getWeather() {
-    const response = await fetch("https://localhost:8080/api/hello?");
+    const response = await fetch("http://localhost:8080/api/hello?");
     
     responseOBJ = await response.json();
 
