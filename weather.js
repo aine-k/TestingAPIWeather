@@ -6,7 +6,7 @@ async function getWeather() {
       throw new Error(`Response status: ${response.status}`);
     }
 
-    const result = await response.json();
+    const result = await response.text(); //do not look for .JSON() the API is actually returning text in the response body
     console.log(result);
   } catch (error) {
     console.error(error.message);
