@@ -1,10 +1,14 @@
 async function getWeather() {
-    const response = await fetch("http://localhost:8080/api/hello?");
-    
-    responseOBJ = await response.json();
+  const url = "http://localhost:8080/api/hello?";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
 
-    console.log(responseOBJ);
-
-    para = document.getElementById("weather");
-    para.innerText = responseOBJ;
+    const result = await response.json();
+    console.log(result);
+  } catch (error) {
+    console.error(error.message);
+  }
 }
