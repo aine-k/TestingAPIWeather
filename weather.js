@@ -1,11 +1,10 @@
 async function getWeather() {
-    const response = await fetch("localhost:8080/api/hello?");
+    const response = await fetch("https://localhost:8080/api/hello?");
     
-    weatherOBJ = await response.json();
+    responseOBJ = await response.json();
 
-    console.log(weatherOBJ.current);
-    console.log(weatherOBJ.current.temp_c);
+    console.log(responseOBJ);
 
     para = document.getElementById("weather");
-    para.innerText = "the temperature in Athlone is now: " + weatherOBJ.current.temp_c;
+    para.innerText = responseOBJ;
 }
